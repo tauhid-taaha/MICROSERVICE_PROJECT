@@ -88,3 +88,11 @@ This microservices system implements a job portal with event management capabili
 - Eureka dashboard for service health
 - Application logs for debugging
 - Service registration and discovery monitoring
+
+## Future Enhancements
+
+- Circuit breaker pattern implementation
+- Distributed tracing with Zipkin
+- Centralized logging with ELK stack
+- Metrics collection with Prometheus
+- Service mesh with Istio

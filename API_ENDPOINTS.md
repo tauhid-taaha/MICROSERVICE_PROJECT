@@ -353,3 +353,11 @@ curl -X PATCH http://localhost:8080/api/applications/{application_id}/status/ACC
 - Email addresses must be valid format
 - Status values are case-insensitive but stored in uppercase
 - All services are accessible through the API Gateway at port 8080
+
+## Rate Limiting
+
+Currently no rate limiting is implemented. For production use, consider implementing:
+- Per-user rate limits
+- Per-IP rate limits
+- Burst protection
+- API key-based limiting

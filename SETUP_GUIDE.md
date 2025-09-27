@@ -73,3 +73,9 @@ Check console output for any error messages. Services will show startup logs.
 - Create events
 - Submit applications
 - Check Eureka dashboard for service health
+
+## Tips
+- Use Postman or similar tool for API testing
+- Check service logs if something doesn't work
+- All services must be running for full functionality
+- MongoDB connection is required for data persistence

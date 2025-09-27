@@ -328,6 +328,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For support and questions, please contact the development team or create an issue in the repository.
 
+### Quick Links
+- [Setup Guide](SETUP_GUIDE.md)
+- [API Documentation](API_ENDPOINTS.md)
+- [Architecture Overview](ARCHITECTURE.md)
+- [Deployment Guide](DEPLOYMENT.md)
+
 ---
 
 **Happy Coding! 🚀**
+
+---
+*Last updated: January 2024*
