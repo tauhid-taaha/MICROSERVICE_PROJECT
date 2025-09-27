@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  # MongoDB (Optional - if you want to use local MongoDB instead of Atlas)
+  mongodb:
+    image: mongo:latest
+    container_name: job-portal-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - job-portal-network
+
+  # Service Discovery
+  service-discovery:
+    build: ./Service_Discovery
+    container_name: service-discovery
+    ports:
+      - "8761:8761"
+    networks:
+      - job-portal-network
+    depends_on:
+      - mongodb
+
+  # API Gateway
+  gateway:
+    build: ./Gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    networks:
+      - job-portal-network
+    depends_on:
+      - service-discovery
+
+  # User Service
+  user-service:
+    build: ./UserService
+    container_name: user-service
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://admin:password@mongodb:27017/hirenow_users?authSource=admin
+    networks:
+      - job-portal-network
+    depends_on:
+      - service-discovery
+      - mongodb
+
+  # Application Service
+  application-service:
+    build: ./ApplicationService
+    container_name: application-service
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://admin:password@mongodb:27017/hirenow_applications?authSource=admin
+    networks:
+      - job-portal-network
+    depends_on:
+      - service-discovery
+      - mongodb
+
+  # Event Service
+  event-service:
+    build: ./EventService
+    container_name: event-service
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://admin:password@mongodb:27017/hirenow_jobs?authSource=admin
+    networks:
+      - job-portal-network
+    depends_on:
+      - service-discovery
+      - mongodb
+
+volumes:
+  mongodb_data:
+
+networks:
+  job-portal-network:
+    driver: bridge
