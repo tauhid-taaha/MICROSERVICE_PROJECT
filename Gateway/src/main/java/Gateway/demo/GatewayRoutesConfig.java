@@ -22,11 +22,11 @@ public class GatewayRoutesConfig {
         );
     }
 
-    // JobService Route
+    // EventService Route
     @Bean
-    public RouterFunction<ServerResponse> jobServiceRoute() {
+    public RouterFunction<ServerResponse> eventServiceRoute() {
         return route(
-                path("/api/jobs/**"),
+                path("/api/events/**"),
                 request -> ServerResponse.temporaryRedirect(
                         java.net.URI.create("http://localhost:8082" + request.path())
                 ).build()

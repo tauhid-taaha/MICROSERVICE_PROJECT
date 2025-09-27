@@ -1,4 +1,4 @@
-package EventService.demo.config;
+package JobService.demo.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

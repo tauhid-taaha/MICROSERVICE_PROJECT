@@ -55,7 +55,7 @@ public class UserService {
         // Assign default role if none provided
         if (user.getRoles() == null || user.getRoles().isEmpty()) {
             Set<String> defaultRoles = new HashSet<>();
-            defaultRoles.add("JOB_SEEKER");
+            defaultRoles.add("PARTICIPANT");
             user.setRoles(defaultRoles);
         }
         return userRepository.save(user);

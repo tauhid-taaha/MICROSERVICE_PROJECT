@@ -1,0 +1,54 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Custom for Visual Studio
+*.cs     diff=csharp
+
+# Standard to msysgit
+*.doc	 diff=astextplain
+*.DOC	 diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF	 diff=astextplain
+*.rtf	 diff=astextplain
+*.RTF	 diff=astextplain
+
+# Markdown files
+*.md text
+
+# Java files
+*.java text
+*.properties text
+*.xml text
+*.yml text
+*.yaml text
+
+# Maven files
+pom.xml text
+mvnw text
+mvnw.cmd text
+
+# Docker files
+Dockerfile text
+docker-compose.yml text
+docker-compose.yaml text
+
+# Scripts
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Documentation
+*.txt text
+*.md text
+LICENSE text
+README* text
+CHANGELOG* text
+CONTRIBUTING* text
+
+# Git files
+.gitignore text
+.gitattributes text

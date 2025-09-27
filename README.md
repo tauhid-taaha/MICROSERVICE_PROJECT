@@ -55,15 +55,15 @@ This project implements a microservices architecture with the following componen
   - Duplicate application prevention
   - Application statistics and analytics
 
-### 5. Event Service (Job Service)
+### 5. Event Service
 - **Port**: 8082
-- **Purpose**: Event and job management
-- **Database**: MongoDB (hirenow_jobs)
+- **Purpose**: Event management and organization
+- **Database**: MongoDB (hirenow_events)
 - **Features**:
   - Event creation and management
-  - Job posting and management
   - Event search and filtering
   - Organizer-specific event management
+  - Event capacity management
 
 ## 🛠️ Technology Stack
 

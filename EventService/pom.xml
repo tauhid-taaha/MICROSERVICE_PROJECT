@@ -8,11 +8,11 @@
 		<version>3.4.9</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>JobService</groupId>
+	<groupId>EventService</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>JobService</name>
-	<description>Demo project for Spring Boot</description>
+	<name>EventService</name>
+	<description>Event Management Service for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>

@@ -21,7 +21,7 @@ public class ApplicationService {
 
     // CORRECTED: Use service discovery names and proper endpoints
     private static final String USER_SERVICE_URL = "http://UserService/api/users";
-    private static final String JOB_SERVICE_URL = "http://JobService/api/jobs";
+    private static final String EVENT_SERVICE_URL = "http://EventService/api/events";
 
     public JobApplication createApplication(JobApplication application) {
         // Validate required fields
@@ -243,11 +243,11 @@ public class ApplicationService {
 
     private boolean jobExists(String jobId) {
         try {
-            String url = JOB_SERVICE_URL + "/" + jobId;
+            String url = EVENT_SERVICE_URL + "/" + jobId;
             ResponseEntity<Object> response = restTemplate.getForEntity(url, Object.class);
             return response.getStatusCode().is2xxSuccessful();
         } catch (Exception e) {
-            System.err.println("Error checking job existence: " + e.getMessage());
+            System.err.println("Error checking event existence: " + e.getMessage());
             return false;
         }
     }
